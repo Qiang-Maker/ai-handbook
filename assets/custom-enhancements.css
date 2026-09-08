@@ -1,0 +1,110 @@
+/* ==========================================================================
+   STJHUB Docs Pro - Refined & Minimalist Visual Enhancements
+   ========================================================================== */
+
+/* 1. 顶部全局极细阅读进度条（实用且不抢视线） */
+#reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6);
+  z-index: 9999;
+  transition: width 0.08s linear;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+  pointer-events: none;
+}
+
+/* 2. 首页环境极光微弱呼吸（极其缓慢柔和，不刺眼） */
+.VPHero .image-bg,
+.VPImage.image-src,
+.home-bg-glow {
+  animation: ambient-glow 12s ease-in-out infinite alternate !important;
+}
+
+@keyframes ambient-glow {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.65;
+    filter: blur(55px);
+  }
+  100% {
+    transform: scale(1.04);
+    opacity: 0.8;
+    filter: blur(65px);
+  }
+}
+
+/* 3. 卡片暗黑细腻微描边与克制微上浮（无抖动、无变形） */
+.VPFeature,
+.VPHomeFeatures .item,
+.level-card,
+.card-item {
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .VPFeature,
+.dark .VPHomeFeatures .item,
+.dark .level-card,
+.dark .card-item {
+  background: rgba(22, 24, 29, 0.7) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.VPFeature:hover,
+.VPHomeFeatures .item:hover,
+.level-card:hover,
+.card-item:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(99, 102, 241, 0.3) !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* 鼠标跟随微弱高光（极克制） */
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: var(--mouse-y, -1000px);
+  left: var(--mouse-x, -1000px);
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* 4. 代码块精致边框与专业阅读内距（无小圆点，紧凑利落） */
+div[class*='language-'] {
+  position: relative;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  transition: border-color 0.2s ease;
+}
+
+div[class*='language-']:hover {
+  border-color: rgba(99, 102, 241, 0.25) !important;
+}
+
+/* 复制代码按钮微调 */
+div[class*='language-'] > button.copy {
+  border-radius: 6px !important;
+  transition: opacity 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* 5. 全局基础排版细节优化 */
+html {
+  scroll-behavior: smooth !important;
+}

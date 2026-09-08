@@ -1,0 +1,19 @@
+{
+  "name": "ai-era-handbook",
+  "version": "1.0.0",
+  "description": "AI 时代使用手册 - 原版复刻与纯净前端静态工程",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js",
+    "py": "python server.py"
+  },
+  "keywords": [
+    "vitepress",
+    "ai",
+    "handbook",
+    "documentation"
+  ],
+  "author": "",
+  "license": "MIT"
+}
